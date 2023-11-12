@@ -18,7 +18,7 @@ module.exports = {
   // entry: "./src/index.js",
   entry: {
     index: "./src/index.js",
-    main: "./src/main.js",
+    // main: "./src/main.js",
   },
 
   /* 出口文件 */
@@ -39,16 +39,6 @@ module.exports = {
           "css-loader",
           "postcss-loader", // 配置抽离到 postcss.config.js 文件了
         ], // 使用style-loader和css-loader
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "style-loader",
-          "css-loader",
-          "postcss-loader", // 配置抽离到 postcss.config.js 文件了。 必须先 postcss-loader，然后 css-loader，否则会报错
-          "less-loader",
-        ],
       },
       {
         test: /.s[ac]ss$/i, // 匹配sass  scss 文件
@@ -146,13 +136,13 @@ module.exports = {
       // xhtml: false, //  xhtml 一个布尔值，默认值是 false ，如果为 true ,则以兼容 xhtml 的模式引用文件。
       // chunksSortMode : '', //   script的顺序，默认四个选项： none auto dependency {function}
     }),
-    new HtmlWebpackPlugin({
-      title: "webpack 脚手架2", //  生成html的标题
-      filename: "main.html", //  生成html的文件名，默认是index.html，可以添加路径比如：src/index.html
-      template: "./public/index.html", // 模版的路径
-      inject: "body",
-      favicon: "./public/react-logo.png", // html的favicon路径
-      chunks: ["main"],
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: "webpack 脚手架2", //  生成html的标题
+    //   filename: "main.html", //  生成html的文件名，默认是index.html，可以添加路径比如：src/index.html
+    //   template: "./public/index.html", // 模版的路径
+    //   inject: "body",
+    //   favicon: "./public/react-logo.png", // html的favicon路径
+    //   chunks: ["main"],
+    // }),
   ],
 };
